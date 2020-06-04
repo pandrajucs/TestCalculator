@@ -40,7 +40,7 @@ public class CalcTest
 	    
 	    FirefoxOptions options = new FirefoxOptions();
         
-        options.addArguments("--headless");
+       // options.addArguments("--headless");
 	    options.setCapability("requireWindowFocus", true);
         //String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
         String mygecko= prop.getProperty("webdriver_path") + "geckodriver";
@@ -62,7 +62,7 @@ public class CalcTest
 
         String bodyText = driver.findElement(By.xpath("/html/body")).getText();
         System.out.println(bodyText);
-	    driver.findElement(By.id("f1")).sendKeys("12");
+	    driver.findElement(By.xpath("/html/body/form/input[1]")).sendKeys("12");
 	    driver.findElement(By.xpath("/html/body/form/input[2]")).sendKeys("38");
         
 	    driver.findElement(By.name("r1")).click();
